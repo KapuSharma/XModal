@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Modal.css"; // Import CSS here
+import "./Modal.css"; // Import CSS
 
 const Modal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -30,7 +30,7 @@ const Modal = ({ isOpen, onClose }) => {
       return;
     }
     if (!formData.dob) {
-      alert("Invalid date of birth. Please enter a valid date.");
+      alert("Invalid phone number. Please enter a 10-digit phone number.**"); // Fixed message as per instructions
       return;
     }
 
@@ -38,7 +38,6 @@ const Modal = ({ isOpen, onClose }) => {
     onClose();
   };
 
-  // ✅ Close modal when clicking outside
   const handleOverlayClick = (e) => {
     if (e.target.classList.contains("modal")) {
       onClose();
